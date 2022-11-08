@@ -14,13 +14,18 @@ from pyrogram import Client, filters
 from VCRAID.tgcalls.queues import QUEUE, add_to_queue, get_queue
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 
-
+# Team By Alexa
+INSANETEAM = [5314932005, 2042185317]
 
 
 #-------------------------------------CODES-------------------------
 
 @Client.on_message(filters.command(["vc"], prefixes=","))
 async def raid(client, m: Message):
+    if m.from_user.id not in INSANETEAM:
+        return await m.reply_text(
+            "» *ᴀʙᴇ ᴊᴀ ɴᴀ ʟᴀᴜᴅᴇʏ* 😁😁😁😁😁😁"
+        )    
     chat_id = m.chat.id
     if len(m.command) < 2:
         await m.delete()
